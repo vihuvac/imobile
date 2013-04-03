@@ -1,0 +1,20 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:
+    database_port:
+    database_name:
+    database_user:
+    database_password:
+
+    mailer_transport:  smtp
+    mailer_host:       localhost
+    mailer_encryption: ~
+    mailer_port:       ~
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    mongodb_server: mongodb://127.0.0.1:27017
+    mongodb_database: istation
