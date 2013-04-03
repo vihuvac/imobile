@@ -1,7 +1,7 @@
 {
-    "name": "istation/website",
-    "description": "The official istation website",
-    "authors":     [
+    "name": "imobile/website",
+    "description": "The Official iMobile Website",
+    "authors": [
         {
             "name":     "Víctor Hugo Valle Castillo",
             "email":    "victouk@gmail.com",
@@ -38,6 +38,8 @@
         "sensio/generator-bundle": "2.2.*",
         "jms/security-extra-bundle": "1.4.*",
         "jms/di-extra-bundle": "1.3.*",
+
+        "kriswallsmith/assetic": "1.1.*",
 
         "braincrafted/bootstrap-bundle": "dev-master",
         "craue/formflow-bundle": "1.1.*",

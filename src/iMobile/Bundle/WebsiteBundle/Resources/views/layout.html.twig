@@ -1,0 +1,25 @@
+{% extends '::base.html.twig' %}
+
+{% block main_content %}
+	<div class="navbar">
+	    <div class="navbar-inner">
+	        <a class="brand" href="{{ path('imobile_website_default_index') }}">iMobile</a>
+	        {% block main_menu %}
+	        	{{ knp_menu_render('WebsiteBundle:Builder:mainMenu', {'nav_type': 'navbar', 'allow_safe_labels': true}) }}
+	        {% endblock %}
+
+	        {% block right_menu %}
+	        	{{ knp_menu_render('WebsiteBundle:Builder:rightMenu', {'nav_type': 'navbar', 'pull': 'right', 'allow_safe_labels': true}) }}
+	        {% endblock %}
+	    </div>
+	</div>
+	{% block content %}{% endblock %}
+{% endblock %}
+
+{% block javascripts %}
+	{% javascripts
+	    '@WebsiteBundle/Resources/public/js/main.js'
+	%}
+		<script type="text/javascript" src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}

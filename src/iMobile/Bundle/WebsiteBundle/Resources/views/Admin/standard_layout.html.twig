@@ -1,0 +1,15 @@
+{% extends 'SonataAdminBundle::standard_layout.html.twig' %}
+
+{% block logo %}
+	<div class="nav pull-right">
+	    <ul class="nav">
+	        <li>
+	            <a href="{{ path('imobile_website_default_index') }}">
+	                <i class="icon-home"></i> {% trans %}Back to iMobile{% endtrans %}
+	            </a>
+	        </li>
+	        <li class="divider-vertical"></li>
+	    </ul>
+	</div>
+    {{ parent() }}
+{% endblock %}

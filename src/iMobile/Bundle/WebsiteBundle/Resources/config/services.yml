@@ -1,0 +1,12 @@
+imports:
+    - { resource: email.yml }
+
+parameters:
+    imobile_website.locale_listener.class: iMobile\Bundle\WebsiteBundle\Listener\LocaleListener
+
+services:
+    imobile_website.locale_listener:
+        class: %imobile_website.locale_listener.class%
+        arguments: [%locale%]
+        tags:
+            -  { name: kernel.event_subscriber }

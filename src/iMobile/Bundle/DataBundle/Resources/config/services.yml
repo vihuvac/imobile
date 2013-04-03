@@ -1,0 +1,8 @@
+parameters:
+
+services:
+    imobile.website.admin.post:
+        class: iMobile\Bundle\DataBundle\Admin\PostAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Posts, label: Posts }
+        arguments: [null, iMobile\Bundle\DataBundle\Entity\Post, SonataAdminBundle:CRUD, @service_container]

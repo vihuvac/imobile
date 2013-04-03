@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="{% block lang %}es{% endblock %}">
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}iMobile{% endblock %}</title>
+        {% stylesheets 'bundles/website/less/main.less' filter="cssrewrite, less"%}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+        {% endstylesheets %}
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
+        {% include 'WebsiteBundle::_javascripts.html.twig' %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
