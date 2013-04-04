@@ -23,33 +23,33 @@ class Builder extends ContainerAware
         $item->setExtra('safe_label', true);
 
         $item = $menu->addChild(
-            $this->getLabel($translator->trans('Blog'), 'book'),
+            $this->getLabel($translator->trans('Nosotros'), 'user'),
             array(
-                'route' => 'imobile_website_default_blog'
+                'route' => 'imobile_website_default_myv'
             )
         );
         $item->setExtra('safe_label', true);
 
         $item = $menu->addChild(
-            $this->getLabel($translator->trans('Empresa'), 'list-alt'),
+            $this->getLabel($translator->trans('Novedades'), 'list-alt'),
             array(
-                'route' => 'imobile_website_default_empresa'
+                'route' => 'imobile_website_default_novedades'
             )
         );
         $item->setExtra('safe_label', true);
 
         $item = $menu->addChild(
-            $this->getLabel($translator->trans('Faq'), 'user'),
+            $this->getLabel($translator->trans('Servicios'), 'globe'),
             array(
-                'route' => 'imobile_website_default_faq'
+                'route' => 'imobile_website_default_servicios'
             )
         );
         $item->setExtra('safe_label', true);
 
         $item = $menu->addChild(
-            $this->getLabel($translator->trans('Enlaces'), 'tags'),
+            $this->getLabel($translator->trans('Equipos'), 'th-large'),
             array(
-                'route' => 'imobile_website_default_enlaces'
+                'route' => 'imobile_website_default_equipos'
             )
         );
         $item->setExtra('safe_label', true);
@@ -71,14 +71,6 @@ class Builder extends ContainerAware
         $menu = $factory->createItem('root');
 
         $this->addLocaleMenu($menu);
-
-        $item = $menu->addChild(
-            $this->getLabel($translator->trans('Logout'), 'off'),
-            array(
-                'route' => 'fos_user_security_logout',
-            )
-        );
-        $item->setExtra('safe_label', true);
 
         return $menu;
     }

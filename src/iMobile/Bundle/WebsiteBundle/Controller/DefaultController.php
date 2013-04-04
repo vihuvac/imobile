@@ -21,37 +21,37 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/blog")
+     * @Route("/nuestra-misión-y-visión")
      * @Template()
      */
-    public function blogAction()
+    public function myvAction()
     {
         return array();
     }
 
     /**
-     * @Route("/empresa")
+     * @Route("/novedades")
      * @Template()
      */
-    public function empresaAction()
+    public function novedadesAction()
     {
         return array();
     }
 
     /**
-     * @Route("/preguntas-mas-frecuentes")
+     * @Route("/servicios")
      * @Template()
      */
-    public function faqAction()
+    public function serviciosAction()
     {
         return array();
     }
 
     /**
-     * @Route("/enlaces")
+     * @Route("/equipos")
      * @Template()
      */
-    public function enlacesAction()
+    public function equiposAction()
     {
         return array();
     }
