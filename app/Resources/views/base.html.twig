@@ -4,14 +4,24 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}iMobile{% endblock %}</title>
-        {% stylesheets 'bundles/website/less/main.less' filter="cssrewrite, less"%}
+        {% include 'WebsiteBundle::_stylesheets.html.twig' %}
+        {% include 'BraincraftedBootstrapBundle::_html5shiv.html.twig' %}
+        {% stylesheets filter="cssrewrite, less"
+            'bundles/website/less/main.less'
+        %}
             <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
         {% endstylesheets %}
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            {% block header %}{% endblock %}
+            <div class="container">
+                {% block main_content %}{% endblock %}
+            </div>
+        {% endblock %}
+        {% block footer %}{% endblock %}    
         {% include 'WebsiteBundle::_javascripts.html.twig' %}
         {% block javascripts %}{% endblock %}
     </body>

@@ -15,9 +15,9 @@ class Builder extends ContainerAware
         $menu->setCurrentUri($this->container->get('request')->getRequestUri());
 
         $item = $menu->addChild(
-            $this->getLabel($translator->trans('Home'), 'home'),
+            $this->getLabel($translator->trans('Inicio'), 'home'),
             array(
-                'route' => 'imobile_website_default_index',
+                'route' => 'imobile_website_default_index'
             )
         );
         $item->setExtra('safe_label', true);
@@ -25,23 +25,15 @@ class Builder extends ContainerAware
         $item = $menu->addChild(
             $this->getLabel($translator->trans('Blog'), 'book'),
             array(
-                'uri' => '#'
+                'route' => 'imobile_website_default_blog'
             )
         );
         $item->setExtra('safe_label', true);
 
         $item = $menu->addChild(
-            $this->getLabel($translator->trans('Biography'), 'list-alt'),
+            $this->getLabel($translator->trans('Empresa'), 'list-alt'),
             array(
-                'uri' => '#'
-            )
-        );
-        $item->setExtra('safe_label', true);
-
-        $item = $menu->addChild(
-            $this->getLabel($translator->trans('Gallery'), 'th-large'),
-            array(
-                'uri' => '#'
+                'route' => 'imobile_website_default_empresa'
             )
         );
         $item->setExtra('safe_label', true);
@@ -49,23 +41,23 @@ class Builder extends ContainerAware
         $item = $menu->addChild(
             $this->getLabel($translator->trans('Faq'), 'user'),
             array(
-                'uri' => '#'
+                'route' => 'imobile_website_default_faq'
             )
         );
         $item->setExtra('safe_label', true);
 
         $item = $menu->addChild(
-            $this->getLabel($translator->trans('Links'), 'tags'),
+            $this->getLabel($translator->trans('Enlaces'), 'tags'),
             array(
-                'uri' => '#'
+                'route' => 'imobile_website_default_enlaces'
             )
         );
         $item->setExtra('safe_label', true);
 
         $item = $menu->addChild(
-            $this->getLabel($translator->trans('Conctact'), 'envelope'),
+            $this->getLabel($translator->trans('Conctactar'), 'envelope'),
             array(
-                'uri' => '#'
+                'route' => 'imobile_website_default_contactar'
             )
         );
         $item->setExtra('safe_label', true);
@@ -79,6 +71,14 @@ class Builder extends ContainerAware
         $menu = $factory->createItem('root');
 
         $this->addLocaleMenu($menu);
+
+        $item = $menu->addChild(
+            $this->getLabel($translator->trans('Logout'), 'off'),
+            array(
+                'route' => 'fos_user_security_logout',
+            )
+        );
+        $item->setExtra('safe_label', true);
 
         return $menu;
     }

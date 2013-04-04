@@ -1,19 +1,63 @@
 {% extends '::base.html.twig' %}
 
 {% block main_content %}
-	<div class="navbar">
+	<div class="navbar navbar-fixed-top">
 	    <div class="navbar-inner">
-	        <a class="brand" href="{{ path('imobile_website_default_index') }}">iMobile</a>
-	        {% block main_menu %}
-	        	{{ knp_menu_render('WebsiteBundle:Builder:mainMenu', {'nav_type': 'navbar', 'allow_safe_labels': true}) }}
-	        {% endblock %}
+	    	<div class="container">
+		        <a class="brand" href="{{ path('imobile_website_default_index') }}">iMobile</a>
+		        {% block main_menu %}
+		        	{{ knp_menu_render('WebsiteBundle:Builder:mainMenu', {'nav_type': 'navbar', 'allow_safe_labels': true}) }}
+		        {% endblock %}
 
-	        {% block right_menu %}
-	        	{{ knp_menu_render('WebsiteBundle:Builder:rightMenu', {'nav_type': 'navbar', 'pull': 'right', 'allow_safe_labels': true}) }}
-	        {% endblock %}
+		        {% block right_menu %}
+		        	{{ knp_menu_render('WebsiteBundle:Builder:rightMenu', {'nav_type': 'navbar', 'pull': 'right', 'allow_safe_labels': true}) }}
+		        {% endblock %}
+		    </div>
 	    </div>
 	</div>
 	{% block content %}{% endblock %}
+{% endblock %}
+
+{% block footer %}
+	<footer class="footer">
+        <div class="container">
+            <p class="pull-right">
+            	<a href="#">Back to top</a>
+            </p>
+            <p>Made in Vienna by 
+            	<a href="http://florianeckerstorfer.com">Florian Eckerstorfer</a>.
+            </p>
+            <p>Twitter Bootstrap is designed and built with all the love in the world 
+            	<a href="http://twitter.com/twitter" target="_blank">@twitter</a> by 
+            	<a href="http://twitter.com/mdo" target="_blank">@mdo</a> and 
+            	<a href="http://twitter.com/fat" target="_blank">@fat</a>.
+            </p>
+            <p>Javascript and CSSode licensed under the 
+            	<a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. 
+            	Symfony2 bundle licensed under the 
+            	<a href="http://opensource.org/licenses/MIT">MIT License</a>. 
+            	Documentation licensed under 
+            	<a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+            </p>
+            <p>Icons from 
+            	<a href="http://glyphicons.com">Glyphicons Free</a>, 
+            	licensed under 
+            	<a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+            </p>
+
+            <ul class="footer-links">
+                <li>
+                	<a href="http://braincrafted.com">Read the blog</a>
+                </li>
+                <li>
+                	<a href="https://github.com/braincrafted/bootstrap-bundle/issues?state=open">Submit issues</a>
+                </li>
+                <li>
+                	<a href="https://github.com/braincrafted/bootstrap-bundle/wiki">Roadmap and changelog</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 {% endblock %}
 
 {% block javascripts %}
